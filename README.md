@@ -40,7 +40,6 @@ npm install
 Create a .env file in the root folder based on the template:
 
 ```env
-Code snippet
 PORT=3000
 DB_HOST=localhost
 DB_USER=root
