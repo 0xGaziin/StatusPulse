@@ -30,11 +30,11 @@ Node.js (v18 or higher)
 PostgreSQL instance (Local or Docker container)
 
 **1. Installation**
-Bash
+```bash
 git clone https://github.com/0xGaziin/StatusPulse.git
 cd StatusPulse
 npm install
-
+```
 
 **2. Environment Variables**
 Create a .env file in the root folder based on the template:
