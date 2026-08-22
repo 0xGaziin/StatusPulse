@@ -45,5 +45,5 @@ frontend/
 └── package.json
 ```
 
-👤 Author
+# 👤 Author
 Created by **0xGaziin**.
