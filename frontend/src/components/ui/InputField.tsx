@@ -1,9 +1,10 @@
 interface InputFieldProps {
   type: string;
   placeholder: string;
+  name: string;
 }
 
-export default function InputField({ type, placeholder }: InputFieldProps) {
+export default function InputField({ type, placeholder , name }: InputFieldProps) {
   return (
     <input 
       type={type} 
