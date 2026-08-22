@@ -1,7 +1,11 @@
+import HeroHeader from "@/components/sections/HeroHeader";
+import Features from "@/components/sections/Features";
+
 export default function Page() {
-	return (
-		<div>
-			<h1>Hello, world!</h1>
-		</div>
-	)
+  return (
+    <main>
+      <HeroHeader />
+      <Features />
+    </main>
+  )
 }
