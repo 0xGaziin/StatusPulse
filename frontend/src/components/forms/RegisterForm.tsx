@@ -22,9 +22,10 @@ export default function RegisterForm() {
     const email = formData.get('email');
     const password = formData.get('password');
 
-    if (!name || !email  || !password) return;
-
+    
     try {
+      if (!name || !email  || !password) throw new Error('Please fill in all fields.');
+
       setIsLoading(true);
       setMessage('Loading...');
       const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users/register`, {
@@ -38,7 +39,14 @@ export default function RegisterForm() {
       router.push('/login');
     } catch (error: any) {
       console.error(error);
-      setMessage(error.response?.data?.message || 'Something went wrong.');
+
+      const errorResponse = error.response?.data?.message;
+      
+      const errorMessage = Array.isArray(errorResponse) 
+        ? errorResponse[0] 
+        : errorResponse || error.message || 'Something went wrong.';
+
+      setMessage(errorMessage);
       setIsLoading(false);
     }
   }
@@ -46,7 +54,7 @@ export default function RegisterForm() {
   return (
     <div>
       <h2 className="font-bold text-center text-2xl">Register</h2>
-      <p className={`font-bold ${message.includes('wrong') || message.includes('use') || message.includes('invalid') ? 'text-red-600' : 'text-green-600'}`}>{message}</p>
+      <p className={`font-bold ${message.includes('wrong') || message.includes('use') || message.includes('invalid') || message.includes('fill') ? 'text-red-600' : 'text-green-600'}`}>{message}</p>
       <form className="flex flex-1 flex-col gap-2 items-center justify-center mt-2 mb-5" onSubmit={handleRegister}>
         <InputField 
           name="name"

@@ -14,6 +14,8 @@ export default function RegisterForm() {
     const password = formData.get('password');
 
     try {
+      if (!email  || !password) throw new Error('Please fill in all fields.');
+
       const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users/login`, {
         email: email,
         password: password
