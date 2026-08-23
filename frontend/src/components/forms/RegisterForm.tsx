@@ -15,7 +15,7 @@ export default function RegisterForm() {
     const password = formData.get('password');
 
     try {
-      const response = await axios.post('http://localhost:3333/users/register', {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users/register`, {
         name: name,
         email: email,
         password: password,
