@@ -10,8 +10,11 @@ import { useState } from "react";
 export default function RegisterForm() {
   const router = useRouter();
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleRegister = async (e: any) => {
+    if (isLoading) return;
+
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
@@ -20,6 +23,7 @@ export default function RegisterForm() {
     const password = formData.get('password');
 
     try {
+      setIsLoading(true);
       setMessage('Loading...');
       const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/users/register`, {
         name: name,
@@ -33,6 +37,7 @@ export default function RegisterForm() {
     } catch (error: any) {
       console.error(error);
       setMessage(error.response?.data?.message || 'Something went wrong.');
+      setIsLoading(false);
     }
   }
 
