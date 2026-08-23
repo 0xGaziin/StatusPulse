@@ -22,6 +22,8 @@ export default function RegisterForm() {
     const email = formData.get('email');
     const password = formData.get('password');
 
+    if (!name || !email  || !password) return;
+
     try {
       setIsLoading(true);
       setMessage('Loading...');
