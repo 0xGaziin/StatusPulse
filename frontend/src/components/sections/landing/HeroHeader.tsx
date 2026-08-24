@@ -1,5 +1,5 @@
 import Image from "next/image"
-import HeroActions from "@/components/ui/HeroSections"
+import HeroActions from "@/components/ui/HeroActions"
 
 export default function HeroHeader() {
   return (

@@ -1,5 +1,5 @@
-import HeroHeader from "@/components/sections/HeroHeader";
-import Features from "@/components/sections/Features";
+import HeroHeader from "@/components/sections/landing/HeroHeader";
+import Features from "@/components/sections/landing/Features";
 
 export default function Page() {
   return (

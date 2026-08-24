@@ -1,5 +1,5 @@
 // src/components/ui/HeroActions.tsx
-import CallToAction from "@/components/ui/CallToAction"
+import CallToAction from "@/components/sections/landing/CallToAction"
 
 const ACTIONS = [
   {
