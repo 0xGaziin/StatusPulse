@@ -1,8 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
-import LoginForm from "../forms/LoginForm"
+import RegisterForm from "../../forms/RegisterForm"
 
-export default function LoginSection() {
+export default function RegisterSection() {
   return (
     <div className="flex flex-1 flex-col justify-center items-center">
       <section className="border-2 md:flex border-green-500 rounded-2xl">
@@ -18,9 +18,13 @@ export default function LoginSection() {
         </div>
 
         <div className="mt-5 md:px-8"> {/* Form */}
-          <LoginForm />
+          <RegisterForm />
         </div>
       </section>
+
+      <p className="mt-2 text-gray-700">
+        By signing up, you agree to our <Link href='/terms' className="text-blue-600 font-bold cursor-pointer">Terms of Service</Link>.
+      </p>
     </div>
   )
 }
