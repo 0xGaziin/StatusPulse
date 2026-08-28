@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -16,10 +16,30 @@ const pages = [
   },
   {
     id: 2,
+    title: 'My Monitors',
+    page: '/dashboard/monitors',
+  },
+  {
+    id: 3,
+    title: 'Incidents',
+    page: '/dashboard/monitors/incidents'
+  },
+  {
+    id: 4,
+    title: 'Notifications',
+    page: '/dashboard/settings/notifications'
+  },
+  {
+    id: 5,
+    title: 'Team',
+    page: '/dashboard/settings/teams'
+  },
+  {
+    id: 6,
     title: 'Settings',
     page: '/dashboard/settings'
-  }
-]
+  },
+];
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const currentPath = usePathname()
