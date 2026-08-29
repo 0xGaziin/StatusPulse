@@ -1,4 +1,5 @@
 import DashboardStats from "@/components/sections/dashboard/DashboardStats"
+import ShowMonitors from "@/components/sections/dashboard/ShowMonitors"
 
 export default function Dashboard() {
   return (
@@ -9,6 +10,12 @@ export default function Dashboard() {
       </section>
 
       <DashboardStats />
+
+      <section className="mt-10 mb-10">
+        <h3 className="font-semibold">Review your monitors</h3>
+      </section>
+
+      <ShowMonitors />
     </>
   )
 }
